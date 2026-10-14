@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sessions | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="sessions">
+    <header class="navbar"><a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a><nav class="nav-links" aria-label="Main navigation"><a href="dashboard.html">Dashboard</a><a href="search.html">Discover</a><a href="skills.html">My skills</a><a href="requests.html">Requests</a><a href="messages.html">Messages</a><a href="sessions.html" aria-current="page">Sessions</a></nav><div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div></header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">MAKE TIME TO LEARN</p><h1>Learning sessions</h1><p>Schedule a session for an accepted swap and mark it complete after you meet.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <div class="content-grid">
+            <section><h2>Your sessions</h2><div id="sessionsList" class="stack"><p class="loading-state">Loading sessions…</p></div></section>
+            <section class="form-card">
+                <h2>Schedule a session</h2>
+                <form id="sessionForm">
+                    <div class="form-group"><label for="sessionSwap">Accepted swap</label><select id="sessionSwap" required><option value="">Loading swaps…</option></select></div>
+                    <div class="form-group"><label for="sessionDate">Date</label><input id="sessionDate" type="date" required></div>
+                    <div class="form-group"><label for="sessionTime">Time</label><input id="sessionTime" type="time" required></div>
+                    <button type="submit" class="button">Schedule session</button>
+                </form>
+                <p class="muted" style="margin:14px 0 0;font-size:13px">Credit transfers are recorded when a teacher marks a lesson complete on the Requests page.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

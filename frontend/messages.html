@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Messages | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="messages">
+    <header class="navbar"><a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a><nav class="nav-links" aria-label="Main navigation"><a href="dashboard.html">Dashboard</a><a href="search.html">Discover</a><a href="skills.html">My skills</a><a href="requests.html">Requests</a><a href="messages.html" aria-current="page">Messages</a><a href="sessions.html">Sessions</a></nav><div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div></header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">KEEP IN TOUCH</p><h1>Messages</h1><p>Conversations are available for accepted swaps. Messages load on demand; this page does not use real-time delivery.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <div class="conversation-layout">
+            <section class="conversation-list surface-card" id="conversationList" aria-label="Conversations"><p class="loading-state">Loading conversations…</p></section>
+            <section class="message-panel surface-card" aria-live="polite">
+                <h2 id="conversationHeading">Choose a conversation</h2>
+                <div id="messageList" class="message-list"><p class="empty-state">Select an accepted swap to view its messages.</p></div>
+                <form id="messageForm" class="message-compose" hidden>
+                    <label class="sr-only" for="messageText">Write a message</label>
+                    <textarea id="messageText" maxlength="2000" rows="2" placeholder="Write a message…" required></textarea>
+                    <button type="submit" class="button">Send</button>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exchange skills, meet curious minds, and grow together with SkillSwap.">
+    <title>SkillSwap | Share Skills, Grow Together</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo" aria-label="SkillSwap home"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="#explore">Explore</a>
+            <a href="#how-it-works">How it works</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="nav-actions">
+            <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to dark theme">☾</button>
+            <a href="login.html" class="login-link" data-auth-link="guest">Log in</a>
+            <a href="register.html" class="btn btn-small" data-auth-link="guest">Join free ↗</a>
+            <a href="dashboard.html" class="btn btn-small" data-auth-link="member" hidden>Go to dashboard ↗</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span> YOUR SKILLS HAVE SUPERPOWERS</div>
+                <h1>Learn something.<span>Teach something.</span><span class="gradient-text">Grow together.</span></h1>
+                <p class="hero-description">You teach what you know. Someone teaches what you don't. Exchange skills, meet curious minds, and grow without spending money.</p>
+                <div class="hero-buttons">
+                    <a href="register.html" class="btn">Start swapping ↗</a>
+                    <a href="#how-it-works" class="btn btn-outline">See how it works ↓</a>
+                </div>
+                <div class="hero-note"><span class="avatar-stack" aria-hidden="true"><span>💻</span><span>🎨</span><span>🎸</span></span><p><strong>Learn together.</strong><br>Everyone has something to teach.</p></div>
+            </div>
+            <div class="hero-art" aria-label="Skill exchange illustration">
+                <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+                <div class="center-circle" aria-hidden="true">✳</div>
+                <div class="skill-card card-code"><span class="skill-emoji" aria-hidden="true">💻</span><div><strong>Web Development</strong><small>Share what you know</small></div><span class="card-symbol" aria-hidden="true">↗</span></div>
+                <div class="skill-card card-design"><span class="skill-emoji" aria-hidden="true">🎨</span><div><strong>Creative skills</strong><small>Discover something new</small></div><span class="card-symbol" aria-hidden="true">✦</span></div>
+                <div class="floating-badge badge-top">Skill Credits ✨</div>
+                <div class="floating-badge badge-bottom">Skills &gt; Money 💜</div>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="How SkillSwap works">
+            <div><strong>01</strong><span>Share your skills</span></div>
+            <div><strong>02</strong><span>Find your match</span></div>
+            <div><strong>03</strong><span>Learn by exchanging</span></div>
+        </section>
+
+        <section class="section" id="explore">
+            <div class="section-heading">
+                <div><p class="section-label">YOUR NEXT ADVENTURE</p><h2>Curiosity looks good on you.</h2><p>Pick up a new skill or share the one you're great at.</p></div>
+                <a href="search.html" class="text-link">Explore skills ↗</a>
+            </div>
+            <div class="skill-grid">
+                <a href="search.html" class="explore-card purple-card"><span class="explore-icon" aria-hidden="true">💻</span><span class="card-tag">TECH</span><h3>Code something cool</h3><p>Explore development and technology skills.</p><span class="explore-arrow" aria-hidden="true">↗</span></a>
+                <a href="search.html" class="explore-card orange-card"><span class="explore-icon" aria-hidden="true">🎨</span><span class="card-tag">CREATIVITY</span><h3>Make ideas real</h3><p>Discover design, illustration, and photography.</p><span class="explore-arrow" aria-hidden="true">↗</span></a>
+                <a href="search.html" class="explore-card green-card"><span class="explore-icon" aria-hidden="true">🎤</span><span class="card-tag">LIFE SKILLS</span><h3>Find your voice</h3><p>Build confidence and share practical knowledge.</p><span class="explore-arrow" aria-hidden="true">↗</span></a>
+                <a href="search.html" class="explore-card pink-card"><span class="explore-icon" aria-hidden="true">🎸</span><span class="card-tag">HOBBIES</span><h3>Try a new passion</h3><p>Learn music, writing, languages, and more.</p><span class="explore-arrow" aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+
+        <section class="how-section" id="how-it-works">
+            <p class="section-label">NO MONEY. JUST KNOWLEDGE.</p><h2>Three steps. Endless possibilities.</h2>
+            <div class="steps-grid">
+                <article class="step"><div class="step-number">01</div><span class="step-emoji" aria-hidden="true">🧩</span><h3>Show what you know</h3><p>Add the skills you can teach and the ones you want to learn.</p></article>
+                <article class="step"><div class="step-number">02</div><span class="step-emoji" aria-hidden="true">🤝</span><h3>Find your people</h3><p>Discover people whose skills match your learning goals.</p></article>
+                <article class="step"><div class="step-number">03</div><span class="step-emoji" aria-hidden="true">🚀</span><h3>Swap and level up</h3><p>Share knowledge, complete sessions, and earn Skill Credits.</p></article>
+            </div>
+        </section>
+
+        <section class="cta-section" id="about">
+            <div><p class="section-label">YOUR NEXT CHAPTER STARTS HERE</p><h2>You've got a skill.<br>Someone needs it.</h2><p>Be part of a community where learning goes both ways.</p></div>
+            <a href="register.html" class="btn cta-button">Find your first swap ↗</a>
+        </section>
+    </main>
+    <footer class="footer"><a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a><p>Made for curious minds. Built for growing together.</p><span>© 2026 SkillSwap</span></footer>
+</body>
+</html>

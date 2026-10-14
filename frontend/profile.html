@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="profile">
+    <header class="navbar">
+        <a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a>
+        <nav class="nav-links" aria-label="Main navigation"><a href="dashboard.html">Dashboard</a><a href="search.html">Discover</a><a href="skills.html">My skills</a><a href="requests.html">Requests</a><a href="messages.html">Messages</a><a href="sessions.html">Sessions</a></nav>
+        <div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div>
+    </header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">YOUR PROFILE</p><h1>Profile</h1><p>Tell the SkillSwap community what you know and what you'd like to learn.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <div class="content-grid">
+            <section class="stack">
+                <article class="surface-card">
+                    <div class="profile-summary"><div class="profile-avatar" id="profileAvatar" aria-hidden="true">✳</div><div class="profile-copy"><h2 id="profileName">Loading profile…</h2><p id="profileEmail"></p><p id="profileBio"></p></div></div>
+                    <div class="form-grid" style="margin-top:22px"><div><h3>Can teach</h3><p id="profileTeaching" class="muted">—</p></div><div><h3>Wants to learn</h3><p id="profileLearning" class="muted">—</p></div><div><h3>Availability</h3><p id="profileAvailability" class="muted">—</p></div><div><h3>Skill credits</h3><p id="profileCredits" class="muted">—</p></div></div>
+                </article>
+                <section id="profileFormSection" class="form-card">
+                    <h2>Update your profile</h2>
+                    <form id="profileForm">
+                        <div class="form-grid">
+                            <div class="form-group"><label for="profileNameInput">Full name</label><input id="profileNameInput" type="text" minlength="2" maxlength="100" required></div>
+                            <div class="form-group"><label for="profileImageUrlInput">Profile image URL (optional)</label><input id="profileImageUrlInput" type="url" placeholder="https://example.com/photo.jpg"></div>
+                            <div class="form-group"><label for="teachingSkillsInput">Skills you can teach</label><textarea id="teachingSkillsInput" maxlength="1000" aria-describedby="skillListHelp"></textarea></div>
+                            <div class="form-group"><label for="learningSkillsInput">Skills you want to learn</label><textarea id="learningSkillsInput" maxlength="1000" aria-describedby="skillListHelp"></textarea></div>
+                            <div class="form-group"><label for="availabilityInput">Availability</label><textarea id="availabilityInput" maxlength="1000"></textarea></div>
+                            <div class="form-group"><label for="bioInput">About you</label><textarea id="bioInput" maxlength="500"></textarea></div>
+                        </div>
+                        <small id="skillListHelp" class="muted">Separate skills with commas or new lines.</small>
+                        <div class="form-actions" style="margin-top:15px"><button type="submit" class="button">Save profile</button></div>
+                    </form>
+                </section>
+            </section>
+            <aside class="surface-card"><p class="section-label">PROFILE TIP</p><h2>Show your learning style</h2><p class="muted">A clear bio and availability make it easier for others to plan a useful skill exchange.</p><a class="text-link" href="skills.html">Manage your skill listings ↗</a></aside>
+        </div>
+    </main>
+</body>
+</html>

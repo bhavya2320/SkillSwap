@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discover skills | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="search">
+    <header class="navbar"><a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a><nav class="nav-links" aria-label="Main navigation"><a href="dashboard.html">Dashboard</a><a href="search.html" aria-current="page">Discover</a><a href="skills.html">My skills</a><a href="requests.html">Requests</a><a href="messages.html">Messages</a><a href="sessions.html">Sessions</a></nav><div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div></header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">FIND YOUR NEXT SKILL SWAP</p><h1>Discover skills</h1><p>Search skills currently listed by SkillSwap members.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <form id="searchForm" class="form-card" role="search">
+            <div class="form-grid">
+                <div class="form-group"><label for="searchText">Search by skill</label><input id="searchText" type="search" maxlength="80" placeholder="Try illustration or public speaking"></div>
+                <div class="form-group"><label for="searchType">Listing type</label><select id="searchType"><option value="teach">People offering to teach</option><option value="">All listings</option><option value="learn">People wanting to learn</option></select></div>
+            </div>
+            <button type="submit" class="button">Search skills</button>
+        </form>
+        <section style="margin-top:26px"><h2>Available listings</h2><div id="searchResults" class="result-grid"><p class="loading-state">Loading listings…</p></div></section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="dashboard">
+    <header class="navbar">
+        <a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="dashboard.html" aria-current="page">Dashboard</a><a href="search.html">Discover</a><a href="skills.html">My skills</a><a href="requests.html">Requests</a><a href="messages.html">Messages</a><a href="sessions.html">Sessions</a>
+        </nav>
+        <div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div>
+    </header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">YOUR SKILLS, YOUR COMMUNITY</p><h1>Welcome back, <span id="welcomeName">there</span>!</h1><p>Keep learning, keep sharing, and see what's happening in your SkillSwap community.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <section class="content-grid">
+            <div class="stack">
+                <article class="surface-card"><h2>Your snapshot</h2><div class="form-grid"><div class="metric-card"><span>Skill credits</span><strong id="creditBalance">—</strong></div><div class="metric-card"><span>Your skills</span><strong id="dashboardSkillCount">—</strong></div><div class="metric-card"><span>Incoming requests</span><strong id="pendingRequestCount">—</strong></div></div></article>
+                <article class="surface-card"><div class="section-heading"><div><p class="section-label">YOUR SKILLS</p><h2>What you're learning and sharing</h2></div><a class="text-link" href="skills.html">Manage skills ↗</a></div><ul id="dashboardSkills" class="list-reset"><li class="loading-state">Loading your skills…</li></ul></article>
+                <article class="surface-card"><div class="section-heading"><div><p class="section-label">SWAP REQUESTS</p><h2>Incoming requests</h2></div><a class="text-link" href="requests.html">View requests ↗</a></div><ul id="dashboardRequests" class="list-reset"><li class="loading-state">Loading requests…</li></ul></article>
+            </div>
+            <aside class="stack">
+                <article class="surface-card"><p class="section-label">QUICK LINKS</p><h2>Where to next?</h2><div class="stack"><a class="button" href="search.html">Discover skills ↗</a><a class="button button-secondary" href="profile.html">Edit your profile</a><a class="button button-secondary" href="transactions.html">Credit history</a><a class="button button-secondary" href="reviews.html">Reviews</a></div></article>
+                <article class="surface-card"><p class="section-label">KEEP GROWING</p><h2>Exchange what you know</h2><p class="muted">Add a teaching skill, find a learner, and schedule a session when your swap is accepted.</p><a class="text-link" href="skills.html">Add a skill ↗</a></article>
+            </aside>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Credit history | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="transactions">
+    <header class="navbar"><a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a><nav class="nav-links" aria-label="Main navigation"><a href="dashboard.html">Dashboard</a><a href="search.html">Discover</a><a href="skills.html">My skills</a><a href="requests.html">Requests</a><a href="messages.html">Messages</a><a href="sessions.html">Sessions</a></nav><div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div></header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">YOUR SKILL CREDITS</p><h1>Credit history</h1><p>Your balance and transfers come directly from SkillSwap.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <section class="metric-card" aria-live="polite"><span>Current balance</span><strong id="transactionBalance">—</strong></section>
+        <section style="margin-top:28px"><h2>Transactions</h2><div id="transactionsList" class="stack"><p class="loading-state">Loading transaction history…</p></div></section>
+    </main>
+</body>
+</html>

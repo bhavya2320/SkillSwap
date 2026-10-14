@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swap requests | SkillSwap</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/api.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+<body data-protected="true" data-page="requests">
+    <header class="navbar"><a href="index.html" class="logo"><span class="logo-mark" aria-hidden="true">✳</span><span>SkillSwap</span></a><nav class="nav-links" aria-label="Main navigation"><a href="dashboard.html">Dashboard</a><a href="search.html">Discover</a><a href="skills.html">My skills</a><a href="requests.html" aria-current="page">Requests</a><a href="messages.html">Messages</a><a href="sessions.html">Sessions</a></nav><div class="nav-actions"><a href="profile.html" class="nav-user" data-profile-link data-user-name>Profile</a><button class="button button-secondary" type="button" data-logout>Log out</button></div></header>
+    <main class="page-shell">
+        <div class="page-heading"><p class="section-label">MAKE THE EXCHANGE</p><h1>Swap requests</h1><p>Review incoming requests, track your outgoing swaps, and complete lessons to transfer credits.</p></div>
+        <p id="pageMessage" class="notice" hidden role="status" aria-live="polite"></p>
+        <div class="inline-actions" style="margin-bottom:20px"><a href="search.html" class="button">Discover a skill ↗</a><a href="sessions.html" class="button button-secondary">View sessions</a></div>
+        <section id="requestsList" class="stack" aria-live="polite"><p class="loading-state">Loading requests…</p></section>
+    </main>
+</body>
+</html>
