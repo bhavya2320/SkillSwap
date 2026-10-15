@@ -1,5 +1,5 @@
 (function () {
-    const API_BASE_URL = "http://localhost:5000";
+    const API_BASE_URL = "https://skillswap-xxy9.onrender.com";
     const TOKEN_KEY = "skillswap-token";
     const USER_KEY = "skillswap-user";
 
