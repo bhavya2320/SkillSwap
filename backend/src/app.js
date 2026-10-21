@@ -33,11 +33,11 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
 
-  // Vercel deployment URLs
+  // Vercel production and current deployment URLs
   'https://skillswap-frontend-9gl5p40h9-bhavya2320s-projects.vercel.app',
   'https://skillswap-frontend-nvwp4kze-bhavya2320s-projects.vercel.app',
 
-  // Optional additional frontend origin from Render environment variables
+  // Additional frontend origin configured in Render
   process.env.FRONTEND_ORIGIN
 ].filter(Boolean);
 
@@ -49,7 +49,7 @@ app.use(helmet({
   }
 }));
 
-// CORS must run before API routes
+// CORS middleware — must be before all API routes
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -57,16 +57,18 @@ app.use(cors({
     }
 
     console.error('Blocked by CORS. Request origin:', origin);
-    return callback(new Error('Not allowed by CORS'));
+    return callback(null, false);
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 204
 }));
 
 app.use(express.json({ limit: '1mb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Authentication rate limiter
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 20,
@@ -78,7 +80,7 @@ const authLimiter = rateLimit({
   legacyHeaders: false
 });
 
-// Health checks
+// Health check endpoints
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     success: true,
