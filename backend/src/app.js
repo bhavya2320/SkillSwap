@@ -33,11 +33,10 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
 
-  // Vercel production and current deployment URLs
+  // Known Vercel frontend deployments
   'https://skillswap-frontend-9gl5p40h9-bhavya2320s-projects.vercel.app',
   'https://skillswap-frontend-nvwp4kze-bhavya2320s-projects.vercel.app',
 
-  // Additional frontend origin configured in Render
   process.env.FRONTEND_ORIGIN
 ].filter(Boolean);
 
@@ -49,15 +48,20 @@ app.use(helmet({
   }
 }));
 
-// CORS middleware — must be before all API routes
+// CORS configuration
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
+    const isAllowed =
+      !origin ||
+      allowedOrigins.includes(origin) ||
+      /^https:\/\/skillswap-frontend-[a-z0-9-]+-bhavya2320s-projects\.vercel\.app$/.test(origin);
+
+    if (isAllowed) {
       return callback(null, true);
     }
 
     console.error('Blocked by CORS. Request origin:', origin);
-    return callback(null, false);
+    return callback(new Error('Not allowed by CORS'));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
