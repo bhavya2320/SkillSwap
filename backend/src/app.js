@@ -25,6 +25,7 @@ const {
 
 const app = express();
 
+// Allowed frontend origins
 const allowedOrigins = [
   'http://127.0.0.1:5500',
   'http://localhost:5500',
@@ -32,6 +33,7 @@ const allowedOrigins = [
   'http://127.0.0.1:3000',
   'http://localhost:5173',
   'http://127.0.0.1:5173',
+  'https://skillswap-frontend-9gl5p40h9-bhavya2320s-projects.vercel.app',
   process.env.FRONTEND_ORIGIN
 ].filter(Boolean);
 
@@ -49,6 +51,7 @@ app.use(cors({
       return callback(null, true);
     }
 
+    console.error('Blocked by CORS. Request origin:', origin);
     return callback(new Error('Not allowed by CORS'));
   },
   credentials: true
@@ -98,16 +101,16 @@ app.get('/', (req, res) => {
   });
 });
 
-// Member 2: Authentication and user profiles
+// Authentication and user profiles
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 
-// Member 3: Skills, swaps and credits
+// Skills, swaps and credits
 app.use('/api/skills', skillRoutes);
 app.use('/api/swaps', swapRoutes);
 app.use('/api/credits', creditRoutes);
 
-// Member 4: Messages, sessions and reviews
+// Messages, sessions and reviews
 app.use('/api/messages', messageRoutes);
 app.use('/api/sessions', sessionRoutes);
 app.use('/api/reviews', reviewRoutes);
