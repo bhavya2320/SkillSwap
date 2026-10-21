@@ -10,7 +10,6 @@ const mongoose = require('mongoose');
 const skillRoutes = require('../routes/skillRoutes');
 const swapRoutes = require('../routes/swapRoutes');
 const creditRoutes = require('../routes/creditRoutes');
-
 const messageRoutes = require('../routes/messageRoutes');
 const sessionRoutes = require('../routes/sessionRoutes');
 const reviewRoutes = require('../routes/reviewRoutes');
@@ -33,7 +32,12 @@ const allowedOrigins = [
   'http://127.0.0.1:3000',
   'http://localhost:5173',
   'http://127.0.0.1:5173',
+
+  // Vercel deployment URLs
   'https://skillswap-frontend-9gl5p40h9-bhavya2320s-projects.vercel.app',
+  'https://skillswap-frontend-nvwp4kze-bhavya2320s-projects.vercel.app',
+
+  // Optional additional frontend origin from Render environment variables
   process.env.FRONTEND_ORIGIN
 ].filter(Boolean);
 
@@ -45,6 +49,7 @@ app.use(helmet({
   }
 }));
 
+// CORS must run before API routes
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -54,7 +59,9 @@ app.use(cors({
     console.error('Blocked by CORS. Request origin:', origin);
     return callback(new Error('Not allowed by CORS'));
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json({ limit: '1mb' }));
@@ -71,10 +78,7 @@ const authLimiter = rateLimit({
   legacyHeaders: false
 });
 
-app.post('/api/auth/register', authLimiter);
-app.post('/api/auth/login', authLimiter);
-
-// Health check
+// Health checks
 app.get('/api/health', (req, res) => {
   res.status(200).json({
     success: true,
@@ -102,7 +106,7 @@ app.get('/', (req, res) => {
 });
 
 // Authentication and user profiles
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/users', userRoutes);
 
 // Skills, swaps and credits
